@@ -1,0 +1,36 @@
+{
+  // Run these with Terminal > Run Task..., or Ctrl+Shift+B (Cmd+Shift+B on Mac)
+  "version": "2.0.0",
+  "options": {
+    // Tells maturin which virtual environment to install into
+    "env": { "VIRTUAL_ENV": "${workspaceFolder}/.venv" }
+  },
+  "tasks": [
+    {
+      "label": "maturin develop",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m maturin develop",
+      "problemMatcher": ["$rustc"]
+    },
+    {
+      "label": "pytest",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m pytest -v",
+      "problemMatcher": []
+    },
+    {
+      // The default build task: compile the Rust, then run the tests
+      "label": "build and test",
+      "dependsOrder": "sequence",
+      "dependsOn": ["maturin develop", "pytest"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "benchmark (release build)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m maturin develop --release && ${command:python.interpreterPath} bench/bench_count.py",
+      "problemMatcher": ["$rustc"]
+    }
+  ]
+}

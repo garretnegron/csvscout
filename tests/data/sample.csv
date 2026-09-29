@@ -1,0 +1,6 @@
+id,name,age,score,active,signup_date
+1,Ada,36,91.5,true,2024-01-15
+2,Grace,,88.0,false,2024-02-03
+3,Linus,54,,true,
+4,,29,72.25,true,2024-03-22
+5,Margaret,41,95.0,,2024-04-10

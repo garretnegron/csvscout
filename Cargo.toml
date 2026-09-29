@@ -1,0 +1,17 @@
+[package]
+name = "csvscout"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# The name Python imports: `import csvscout`
+name = "csvscout"
+# "cdylib" = build a C-compatible shared library (.so / .pyd) that Python can load
+crate-type = ["cdylib"]
+
+[dependencies]
+# PyO3: the bridge between Rust and Python.
+# abi3-py39 builds ONE wheel that works on Python 3.9 and every newer version.
+pyo3 = { version = "0.26", features = ["extension-module", "abi3-py39"] }
+# A fast, well-tested CSV parser (Rust's equivalent of Python's `csv` module)
+csv = "1.3"

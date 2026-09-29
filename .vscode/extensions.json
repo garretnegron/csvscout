@@ -1,0 +1,9 @@
+{
+  // VS Code will offer to install these when you open the folder.
+  "recommendations": [
+    "rust-lang.rust-analyzer",   // Rust autocomplete, inline errors, go-to-definition
+    "ms-python.python",          // Python support + test explorer
+    "tamasfe.even-better-toml",  // syntax highlighting for Cargo.toml / pyproject.toml
+    "vadimcn.vscode-lldb"        // optional: step-through debugger for Rust
+  ]
+}

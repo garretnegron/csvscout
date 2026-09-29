@@ -1,0 +1,12 @@
+{
+  // Use the project's virtual environment automatically
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  // Show the tests in the Testing sidebar (beaker icon)
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests"],
+  // Run clippy (Rust's linter) on save for extra tips
+  "rust-analyzer.check.command": "clippy",
+  "editor.formatOnSave": true,
+  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" }
+}
