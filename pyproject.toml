@@ -4,9 +4,21 @@ build-backend = "maturin"
 
 [project]
 name = "csvscout"
-version = "0.1.0"
+version = "0.0.1"
 description = "Fast CSV profiling for data engineering, written in Rust"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Garret Negron" }]
 requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.urls]
+Repository = "https://github.com/garretnegron/csvscout"
 
 [project.optional-dependencies]
 dev = ["pytest", "maturin"]

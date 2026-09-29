@@ -18,7 +18,7 @@ csvscout.count_rows("data.csv")      # -> 1000000
 
 ## Progress
 - [x] Milestone 0: project setup, `count_rows`
-- [ ] Milestone 1: `column_names`
+- [x] Milestone 1: `column_names`
 - [ ] Milestone 2: `null_counts`
 - [ ] Milestone 3: type inference
 - [ ] Milestone 4: full `profile()` with a Python class
