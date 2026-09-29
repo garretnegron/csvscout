@@ -48,9 +48,18 @@ fn count_rows(path: &str) -> PyResult<usize> {
 /// When you start, rename `_path` to `path` (the underscore just silences
 /// the "unused variable" warning) and delete the `todo!()` line.
 #[pyfunction]
-fn column_names(_path: &str) -> PyResult<Vec<String>> {
+fn column_names(path: &str) -> PyResult<Vec<String>> {
     // Vec<String> is Rust's list of strings. PyO3 turns it into a Python list.
-    todo!("Milestone 1: read the header row and return it as a Vec<String>")
+    let mut reader = csv::Reader::from_path(path).map_err(to_py_err)?;
+
+    // Dropped mut in headers because reader needs to be mutable
+    let headers = csv::Reader::headers(&mut reader).map_err(to_py_err)?;
+
+    let mut names = Vec::new(); // Vec::new() opens new list
+    for h in headers.iter() {
+        names.push(h.to_string()); // appends list with h and converts h to string
+    }
+    Ok(names)
 }
 
 /// The module definition: this is what `import csvscout` runs.
